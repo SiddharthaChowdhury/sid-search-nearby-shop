@@ -1,30 +1,51 @@
 <?php
 class sid_nsna_searchResults_cls{
 
-	private $results;
+	private $results = [];
+	private $cats = [];
 
-	function __construct($data){
+	function __construct($data, $cats){
 		if( !empty($data) )
-		{
 			$this->results = $data;
-		}
 		else
 			$this->results = false;
+
+		if( !empty($cats) )
+			$this->cats = $cats;
+		else
+			$this->cats = false;
 	}
 
 	public function throw_searchResults(){
+		// echo($this->results);
+		//     exit();
 		if( $this->results )
         {
-      //   	var_dump($this->results);
-		    // exit();
         	global $sid_nsna_base_dir;
 			global $sid_nsna_plugin_dir;
             ob_start();
             ?>
             <div class="row">
             	<div class="col-md-3"> <!-- Search Filters -->
-            		<div style="background-color:grey; width:100%; min-height: 400px;">
-            			
+            		<div style="border-right: 1px solid grey; width:100%; min-height: 400px;" class="pull-right"> 
+
+            			<?php
+            			if( $this->cats )
+            			{
+	            			foreach ($this->cats as $key => $value) {
+	            				?>
+	            					<h4><a href="#"><?php echo $value['cat']; ?></a></h4>
+	            				<?php
+	            			}
+	            		}
+	            		else
+	            		{
+	            			?>
+	            				<h4>No Categories</h4>
+	            			<?php
+            			}
+            			?>
+
             		</div>
             	</div>
             	<div class="col-md-9"> <!-- Search Results -->
@@ -69,17 +90,19 @@ class sid_nsna_searchResults_cls{
 		            return ob_get_clean();
 		            ?>
             	</div>
+            	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbgFepltqsSw8FxQauYO8pmWjAXjPKVuQ&libraries=places" defer></script>
             </div>
             <?php
         }// [ end if ]
         else
         {
-            ob_start();
+            
             ?>
 
-
+            	<h1>No results</h1>
+            	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbgFepltqsSw8FxQauYO8pmWjAXjPKVuQ&libraries=places" defer></script>
             <?php
-            return ob_clean();
+            return;
         }
 	}
 }

@@ -48,6 +48,9 @@ add_shortcode('sid_nsna_searchbar_pl3', function(){// Custom page
 add_shortcode('sid_SR_page_pl3', function(){// Custom page
 
     global $sid_nsna_loadStyles_pl3;
+    global $sid_nsna_searchResults_pl3;
+
+    $sid_nsna_searchResults_pl3 = true;
     $sid_nsna_loadStyles_pl3 = true;
 
     if (isset( $_GET["cat"] ) && isset( $_GET["zip"]) && isset( $_GET["piz"]) )
@@ -62,8 +65,11 @@ add_shortcode('sid_SR_page_pl3', function(){// Custom page
 
             $select = new sid_nsna_selectDb_pl3();
             $result = $select->get_AreaBounds($lat, $lng, $radius, $cat);
+            $cats = $select->getParentCats_pl3();
+            // var_dump($result);
+            // exit();
 
-            $var = new sid_nsna_searchResults_cls($result);
+            $var = new sid_nsna_searchResults_cls($result, $cats);
             return $var->throw_searchResults();
         }
     }

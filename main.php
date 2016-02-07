@@ -24,8 +24,8 @@ error_reporting(E_ALL);
 	    wp_register_script('sid_nsna_parentjs_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_regis_js.js');
 	    wp_register_script('sid_nsna_bootstrap_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/bootstrap.min.js');
 	    wp_register_script('sid_nsna_dashboard_script_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_dashboard.js');
+	    wp_register_script('sid_nsna_searchResults_script_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_searchResults.js');
 	    
-
 	    wp_enqueue_style('sid_nsna_parentcss_pl3', plugin_dir_url( __FILE__ ) . 'Assets/styles/nsna_css.css');
 		
 		if (isset( $_POST["sid_nsna_chosenCat_pl3"] ) && isset( $_POST["sid_nsna_latlng_pl3"] ) && wp_verify_nonce($_POST['sid_nsna_searchResultsNonce_pl3'], 'sid-nsna-searchResultsNonce-pl3'))
@@ -43,7 +43,6 @@ error_reporting(E_ALL);
 				exit();
 			}
 		}
-
 	});
 
 	add_action('admin_enqueue_scripts', function(){
@@ -64,6 +63,7 @@ error_reporting(E_ALL);
 		global $sid_nsna_loadRegScript_pl3;
 		global $sid_nsna_loadLndScript_pl3;
 		global $sid_nsna_loadDshScript_pl3;
+		global $sid_nsna_searchResults_pl3;
  
     	if ( $sid_nsna_loadRegScript_pl3 ){
     		wp_enqueue_script( 'jquery' );
@@ -86,6 +86,13 @@ error_reporting(E_ALL);
 		    // wp_enqueue_script( 'sid_nsna_bootstrap_pl3' );
 		    /* Localize script for AJAX*/
 		    wp_localize_script( 'sid_nsna_dashboard_script_pl3', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php')));
+    	}
+    	elseif ($sid_nsna_searchResults_pl3) {
+    		wp_enqueue_script( 'jquery' );
+		    wp_enqueue_script( 'sid_nsna_searchResults_script_pl3' );
+		    // wp_enqueue_script( 'sid_nsna_bootstrap_pl3' );
+		    /* Localize script for AJAX*/
+		    wp_localize_script( 'sid_nsna_searchResults_script_pl3', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php')));
     	}
     	else
         	return;
