@@ -13,6 +13,7 @@ class sid_nsna_security_pl3
 	{
 		$data = trim($data);
 		$data = strip_tags($data);
+		$data = stripcslashes($data);
 		return $data;
 	}
 	public function sid_nsna_isCrudFree($data)

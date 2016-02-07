@@ -34,7 +34,7 @@ class sid_nsna_searchResults_cls{
             			{
 	            			foreach ($this->cats as $key => $value) {
 	            				?>
-	            					<h4><a href="#"><?php echo $value['cat']; ?></a></h4>
+	            					<h5><a href="#"><?php echo $value['cat']; ?></a></h5>
 	            				<?php
 	            			}
 	            		}
