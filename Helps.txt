@@ -1,0 +1,11 @@
+******* Landing page icon menu below slider:
+ 1. Kadence theme options > Home Layout > Widget area "enabled"
+ 2. Installed shortcode widget plugin > Appearance > Widgets > Home widget area > Drag Shortcode Widget > Add shortcode "[sid_nsna_searchbar_pl3]"
+
+******* Creating search results: 
+on plugin activation a page is created "Search results" > Edit page > add shortcode "[sid_SR_page_pl3]". It will start displaying search results.
+
+
+******* Search Filters : 
+ 1. Kadence theme options >  Misc Setting > Create Sidebar "Filter Sidebar"
+ 2. Appearance > Widgets > Home widget area > Drag Shortcode Widget > Add shortcode "[sid_nsna_searchfilters_pl3]"

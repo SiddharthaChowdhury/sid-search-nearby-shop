@@ -1,0 +1,225 @@
+.text-center-align-pl3{
+  text-align: center;
+}
+#step-2, #step-3, #step-4, .lat-Landmark-pl3, #lat_lng_map_pl3, .nsna_hide_this_pl3{
+  display: none; 
+}
+.nsna_inlineBlock_pl3{
+  display: inline-block;
+}
+.strong_font_pl3{
+  font-weight: 900;
+}
+.new-section-pl3{
+  margin: 60px 0px;
+}
+.my_dashboard_button_pl3{
+  padding: 10px 15px;
+  width: 100%;
+  background-color: #f91;
+  color: white;
+  border:none;
+  border-radius: 3px;
+}
+.inlineBlck_pl3,.cat_pl3{
+  display: inline-block;
+  margin: 0px 10px;
+}
+.sid_cat_pl3{
+  width: 100%;
+  min-height: 150px;
+  overflow-y: scroll;
+  border:1px dashed black;
+}
+#lat_lng_map_pl3{
+  width: 100%;
+  height: 300px;
+}
+
+#nsna-autocompleteAddress-pl3{
+  width: 50%;
+  height: 35px;
+  padding-left: 10px;
+}
+
+.nsna_cats_pl3{
+  border:1px dashed grey;
+  padding:15px;
+  margin: 3px 0px;
+}
+.nsna_subcat_pl3
+{
+  padding: 4px 10px;
+  margin: 1px 2px;
+  background-color: #46b8da;
+  color:white;
+  border-radius:2px;
+}
+.nsna_subcat_pl3:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+/*  surbhi style */
+.vv_pl3{
+	width:100%;
+}
+
+/*banner header partner withus [polygon]*/
+.banner_header1_pl3{
+  position: relative;
+}
+.banner_poly_buttons_cont{
+  min-width: 253px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.poly_banner_buttons{
+  padding: 15px 20px;
+  margin: 0px 5px;
+  border: 1px solid black;
+  text-decoration: none !important;
+}
+/* ======== steps numbers ============= */
+
+.steps-step p {
+    margin-top: 10px;
+}
+
+.steps-row {
+    display: table-row;
+}
+
+.steps {
+    display: table;
+    /*width: 60%;*/
+    position: relative;
+}
+
+.steps-step button[disabled] {
+    opacity: 1 !important;
+    /*filter: alpha(opacity=100) !important;*/
+}
+
+.steps-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-index: 0;
+
+}
+
+.steps-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center !important;
+  padding: 6px 0px !important;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 25px !important;
+
+}
+
+/* ============= form design ======= */
+.form-wrap {
+	margin-top: 50px;
+}
+.text-head {
+	margin-bottom: 15px;
+}
+.pad-top {
+	padding: 15px 0px;
+}
+.li-view {
+	display: inline-block;
+}
+.mar-bot_pl3 {
+  margin-bottom: 10px;
+}
+.si_disp_inlineblck_pl3{
+  display: inline-block;
+  margin-right: 60px;
+}
+
+/*===========  LANDING PAGE =================*/
+.pac-container {
+    z-index: 1051 !important;
+}
+/* bottom padding */
+.sid_marbot_pl3 {
+  margin-bottom: 15px;
+}
+.mar-top_pl3 {
+  margin-top: 20px;
+}
+#sid_nsna_autocomplete_pl3 {
+  border: 1px solid #bbb;
+}
+/* ======= service button ===========*/
+.sid_nsna_selectedService_pl3 {
+  width: 100%;
+  /*border: 1px solid #EC0C8C !important;*/
+}
+/*.sid_nsna_selectedService_pl3:hover, .sid_nsna_selectedService_pl3:active, .sid_nsna_selectedService_pl3:focus{
+  background-color: #EC0C8C !important;
+  color: #fff !important;
+}*/
+/*================ search button ==============*/
+.sid_nsna_btnSearch_pl3 {
+  background: #EC0C8C !important;
+  border: 1px solid #EC0C8C !important;
+  color: #fff !important;
+  width: 40%;
+}
+.sid_nsna_btnSearch_pl3:hover, .sid_nsna_btnSearch_pl3:active,.sid_nsna_btnSearch_pl3:focus {
+  background: #EC0C8C !important;
+  border: 1px solid #EC0C8C !important;
+  color: #fff !important;
+}
+
+/* ==========  SEARCH results ===========*/
+.sid_singleResult_pl3{ 
+  border: 2px solid #F0F0F0 ; 
+  padding:20px 10px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.sid_singleResultLogo_pl3{
+  width:100%; 
+  padding: 3px;
+  border: 3px solid #E8E8E8;
+  border-radius: 3px;
+}
+.nsna_getappo{
+  background-color: #FF6633;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 3px;
+  margin-right: 30px;
+}
+.nsna_getappo:hover{
+  color: #fff
+}
+.nsna_contactDet{
+  /*color:#FF0066;*/
+}
+.kt-icon-star4, .kt-icon-star3{
+  color: #f29;
+}
+.nsna_subCat_pl3{
+  background-color:#ECF6CE; 
+  border-radius:3px; padding:3px 6px;
+}
