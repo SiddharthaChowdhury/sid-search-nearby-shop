@@ -42,7 +42,6 @@ class sid_nsna_Dash_cls{
 		$obj = new sid_nsna_selectDb_pl3();
 		$shop_details = $obj->get_usersDetails_pl3();
 		$stamp = $shop_details['logo'];
-		// exit();
 		global $sid_nsna_base_dir;
 		global $sid_nsna_plugin_dir;
 
