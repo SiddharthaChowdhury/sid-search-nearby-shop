@@ -7,9 +7,9 @@ class sid_nsna_activation_pl3{
 
 			$table_name0 = $wpdb->prefix . "sid_shopid_pl3";
 			$table_name1 = $wpdb->prefix . "sid_shops_pl3";
-			$table_name2 = $wpdb->prefix . "sid_shopsContacts_pl3";
-			$table_name3 = $wpdb->prefix . "sid_shopsBank_pl3";
-			$table_name4 = $wpdb->prefix . "sid_shopsCat_pl3";
+			$table_name2 = $wpdb->prefix . "sid_shopscontacts_pl3";
+			$table_name3 = $wpdb->prefix . "sid_shopsbank_pl3";
+			$table_name4 = $wpdb->prefix . "sid_shopscat_pl3";
 
 		    $sid_nsna_db_version_pl3 = '1.0';
 		    $charset_collate = $wpdb->get_charset_collate();
@@ -140,9 +140,9 @@ class sid_nsna_activation_pl3{
 
 			 $table_name0 = $wpdb->prefix . "sid_shopid_pl3";
 		     $table_name1 = $wpdb->prefix . "sid_shops_pl3";
-			 $table_name2 = $wpdb->prefix . "sid_shopsContacts_pl3";
-			 $table_name3 = $wpdb->prefix . "sid_shopsBank_pl3";
-			 $table_name4 = $wpdb->prefix . "sid_shopsCat_pl3";
+			 $table_name2 = $wpdb->prefix . "sid_shopscontacts_pl3";
+			 $table_name3 = $wpdb->prefix . "sid_shopsbank_pl3";
+			 $table_name4 = $wpdb->prefix . "sid_shopscat_pl3";
 
 			 array_push($tabls, $table_name0);
 			 array_push($tabls, $table_name1);

@@ -159,7 +159,7 @@ class sid_nsna_ShopClass_pl3 extends sid_nsna_security_pl3{
 			global $wpdb;
 			$table_name0 = $wpdb->prefix . "sid_shopid_pl3";
 			$table_name1 = $wpdb->prefix . "sid_shops_pl3";
-			$table_name2 = $wpdb->prefix . "sid_shopsContacts_pl3";
+			$table_name2 = $wpdb->prefix . "sid_shopscontacts_pl3";
 			$_checksum = '';
 							// ========>  [  Record particular Shop  ]   <==========
 			$resp = $wpdb->insert( 

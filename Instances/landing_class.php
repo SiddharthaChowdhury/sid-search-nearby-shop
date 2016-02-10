@@ -7,8 +7,6 @@ class sid_nsna_landing_cls{
 		ob_start(); 
 		$select = new sid_nsna_selectDb_pl3();
 		$cats = $select->getCatHierarchy_pl3();
-		// echo '<pre>'.print_r($cats).'</pre>';
-
 		?>
 				<div class="row">
 					<div class="col-md-12 text-center">
@@ -16,7 +14,7 @@ class sid_nsna_landing_cls{
 						?>
 							<div class="col-md-1 col-sm-3 col-xs-4 sid_marbot_pl3">
 							    <a data-toggle="modal" data-target="#sid_addressModal_pl3" href="#" data-cat="<?php echo $key; ?>" class="sid_catsSearch_pl3">
-								    <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/'.$key.'.png'; ?>" alt="Something" ondragstart="return false;" class="img-responsive">
+								    <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/'.$key.'.png?ver=1'; ?>" alt="Something" ondragstart="return false;" class="img-responsive">
 							    </a>
 							    <small class="text-center"><?php echo $key; ?></small>
 							</div>

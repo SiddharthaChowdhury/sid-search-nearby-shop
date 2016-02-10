@@ -9,7 +9,7 @@
 			global $wpdb;
 			$id = $data['target'];
 			$lvl = $data['level'];
-			$tablename = $wpdb->prefix.'sid_shopsCat_pl3';
+			$tablename = $wpdb->prefix.'sid_shopscat_pl3';
 
 			if($lvl == 1)
 				$res = $wpdb->delete( $tablename, array( 'cat' => $id ) );

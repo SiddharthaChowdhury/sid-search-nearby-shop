@@ -7,7 +7,7 @@ class sid_nsna_selectDb_pl3
 	{
 		global $wpdb;
 
-		$tablename = $wpdb->prefix.'sid_shopsCat_pl3';
+		$tablename = $wpdb->prefix.'sid_shopscat_pl3';
 		$cat_detail = $wpdb->get_results( "SELECT cat, parentt, level FROM $tablename " );
 		
 		$cats = [];	// conversion of std obj to array 
@@ -44,7 +44,7 @@ class sid_nsna_selectDb_pl3
 	{
 		global $wpdb;
 
-		$tablename = $wpdb->prefix.'sid_shopsCat_pl3';
+		$tablename = $wpdb->prefix.'sid_shopscat_pl3';
 		$cat_detail = $wpdb->get_results( "SELECT cat, parentt, level FROM $tablename WHERE parentt = 'none' " );
 		
 		$cats = [];	// conversion of std obj to array 
@@ -61,7 +61,7 @@ class sid_nsna_selectDb_pl3
 	public function getSubcat_pl3($data){
 		
 		global $wpdb;
-		$tablename = $wpdb->prefix.'sid_shopsCat_pl3';
+		$tablename = $wpdb->prefix.'sid_shopscat_pl3';
 		$tree = [];
 		foreach ($data as $value) {
 			$result = $wpdb->get_results( "SELECT cat FROM $tablename WHERE parentt = '$value' AND level = '1' " );
@@ -80,7 +80,7 @@ class sid_nsna_selectDb_pl3
 
 	public function getHisSubcats_pl3($data){
 		global $wpdb;
-		$tablename = $wpdb->prefix.'sid_shopsCat_pl3';
+		$tablename = $wpdb->prefix.'sid_shopscat_pl3';
 		$tree = [];
 		$cat = $data['cat'];
 			$result = $wpdb->get_results( "SELECT cat FROM $tablename WHERE parentt = '$cat' AND level = '1' " );
@@ -110,7 +110,7 @@ class sid_nsna_selectDb_pl3
 
 	public function isValid_Service_pl3($cat , $subcat = null){
 		global $wpdb;
-		$tablename = $wpdb->prefix.'sid_shopsCat_pl3';
+		$tablename = $wpdb->prefix.'sid_shopscat_pl3';
 		if($subcat == null)
 			$count = $wpdb->get_var( "SELECT COUNT(*) FROM $tablename WHERE cat = '$subcat' AND level = '0' " );
 		else	
@@ -217,9 +217,13 @@ class sid_nsna_selectDb_pl3
 		HAVING distance < $radius 
 		ORDER BY distance 
 		LIMIT 0 , 20";
+
+		// echo $sql.'<br><br>.......................';
 		
 		$det = $wpdb->get_results( $sql );
 		return $det;
+		// var_dump($det);
+		// exit();
 
 
 	}

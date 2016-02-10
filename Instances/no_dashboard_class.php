@@ -24,7 +24,7 @@ class sid_nsna_noDash_cls{
 					<div class="col-md-10 col-md-offset-1" style="text-align:center;">
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/list.png'; ?>" alt="Listing">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/list.png?ver=1'; ?>" alt="Listing">
 					      <div class="caption">
 					        <h3>Listing</h3>
 					        <div>Listing with us is free and always will be. No cancellation, setup, or sign up fees.</div>
@@ -34,7 +34,7 @@ class sid_nsna_noDash_cls{
 
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/target.png'; ?>" alt="Targeted customers">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/target.png?ver=1'; ?>" alt="Targeted customers">
 					      <div class="caption">
 					        <h3>Targeted customers</h3>
 					        <div>We cut through the clutter to give you efficient and potential customers.</div>
@@ -44,7 +44,7 @@ class sid_nsna_noDash_cls{
 
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/retaintion.png'; ?>" alt="Customer retention">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/retaintion.png?ver=1'; ?>" alt="Customer retention">
 					      <div class="caption">
 					        <h3>Customer retention</h3>
 					        <div>Instantly view customer's feedback posted on our page, which helps in understanding & retaining customers.</div>
@@ -56,7 +56,7 @@ class sid_nsna_noDash_cls{
 	
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/24x7.png'; ?>" alt="24x7">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/24x7.png?ver=1'; ?>" alt="24x7">
 					      <div class="caption">
 					        <h3>24x7 service</h3>
 					        <div>Clients can access our site, view service availability and make appointments with you 24x7.</div>
@@ -65,7 +65,7 @@ class sid_nsna_noDash_cls{
 					  </div>
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/notif.png'; ?>" alt="Instant Notifications">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/notif.png?ver=1'; ?>" alt="Instant Notifications">
 					      <div class="caption">
 					        <h3>Instant Notifications</h3>
 					        <div>We help you in reminding customers to confirm their appointments. Can't make it into work? Cancel or reschedule of appointments can be done through a click.</div>
@@ -75,7 +75,7 @@ class sid_nsna_noDash_cls{
 
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/promotion.png'; ?>" alt="List promotions:">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/promotion.png?ver=1'; ?>" alt="List promotions:">
 					      <div class="caption">
 					        <h3>List promotions:</h3>
 					        <div>We help you in promoting offers through a hassle free process. In a single word we are your digital marketing partners.</div>
@@ -181,7 +181,7 @@ class sid_nsna_noDash_cls{
 					<div class="col-md-10 col-md-offset-1" style="text-align:center;">
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/list.png'; ?>" alt="Listing">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/list.png?ver=1'; ?>" alt="Listing">
 					      <div class="caption">
 					        <h3>Listing</h3>
 					        <div>Listing with us is free and always will be. No cancellation, setup, or sign up fees.</div>
@@ -191,7 +191,7 @@ class sid_nsna_noDash_cls{
 
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/target.png'; ?>" alt="Targeted customers">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/target.png?ver=1'; ?>" alt="Targeted customers">
 					      <div class="caption">
 					        <h3>Targeted customers</h3>
 					        <div>We cut through the clutter to give you efficient and potential customers.</div>
@@ -201,7 +201,7 @@ class sid_nsna_noDash_cls{
 
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/retaintion.png'; ?>" alt="Customer retention">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/retaintion.png?ver=1'; ?>" alt="Customer retention">
 					      <div class="caption">
 					        <h3>Customer retention</h3>
 					        <div>Instantly view customer's feedback posted on our page, which helps in understanding & retaining customers.</div>
@@ -211,7 +211,7 @@ class sid_nsna_noDash_cls{
 				<!-- ===================== -->
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/24x7.png'; ?>" alt="24x7">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/24x7.png?ver=1'; ?>" alt="24x7">
 					      <div class="caption">
 					        <h3>24x7 service</h3>
 					        <div>Clients can access our site, view service availability and make appointments with you 24x7.</div>
@@ -220,7 +220,7 @@ class sid_nsna_noDash_cls{
 					  </div>
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/notif.png'; ?>" alt="Instant Notifications">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/notif.png?ver=1'; ?>" alt="Instant Notifications">
 					      <div class="caption">
 					        <h3>Instant Notifications</h3>
 					        <div>We help you in reminding customers to confirm their appointments. Can't make it into work? Cancel or reschedule of appointments can be done through a click.</div>
@@ -230,7 +230,7 @@ class sid_nsna_noDash_cls{
 
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/promotion.png'; ?>" alt="List promotions:">
+					      <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/promotion.png?ver=1'; ?>" alt="List promotions:">
 					      <div class="caption">
 					        <h3>List promotions:</h3>
 					        <div>We help you in promoting offers through a hassle free process. In a single word we are your digital marketing partners.</div>

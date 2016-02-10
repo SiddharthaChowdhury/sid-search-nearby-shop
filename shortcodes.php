@@ -1,6 +1,8 @@
 <?php
 add_shortcode('sid_SC_page_pl3',function(){// Custom page
 
+   
+
 	global $sid_nsna_loadRegScript_pl3;
     global $sid_nsna_loadStyles_pl3;
     global $sid_nsna_loadDshScript_pl3;

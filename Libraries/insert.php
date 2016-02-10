@@ -20,7 +20,7 @@ class sid_nsna_insertDb_pl3{
    			]);
 		}
 
-		$tablename = $wpdb->prefix.'sid_shopsCat_pl3';
+		$tablename = $wpdb->prefix.'sid_shopscat_pl3';
    		$user_count = $wpdb->get_var( "SELECT COUNT(*) FROM $tablename WHERE cat = '$cat' AND parentt = '$parent'" );
    		if ($user_count == 1)
    			return json_encode( [

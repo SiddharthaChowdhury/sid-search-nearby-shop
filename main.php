@@ -9,24 +9,24 @@ error_reporting(E_ALL);
 */
 	register_activation_hook(__FILE__, function(){
 		$initt = new sid_nsna_activation_pl3();
-		// $initt->sid_init_db_pl3();
+		$initt->sid_init_db_pl3();
 		$initt->sid_init_pages_pl3();
 	});
 
 	register_deactivation_hook( __FILE__, function(){
 		$dumpp = new sid_nsna_Dactivation_pl3();
-		$dumpp->sid_dump_db_pl3();
+		// $dumpp->sid_dump_db_pl3();
 		$dumpp->sid_dump_pages_pl3();
 	}); 
 
 	add_action('init', function(){
-	    wp_register_script('sid_nsna_landing_script_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_landing.js');   
-	    wp_register_script('sid_nsna_parentjs_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_regis_js.js');
-	    wp_register_script('sid_nsna_bootstrap_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/bootstrap.min.js');
-	    wp_register_script('sid_nsna_dashboard_script_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_dashboard.js');
-	    wp_register_script('sid_nsna_searchResults_script_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_searchResults.js');
+	    wp_register_script('sid_nsna_landing_script_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_landingScript1.js?ver=1');   
+	    wp_register_script('sid_nsna_parentjs_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_registrationScript1.js?ver=1');
+	    wp_register_script('sid_nsna_bootstrap_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/bootstrap.min.js?ver=1');
+	    wp_register_script('sid_nsna_dashboard_script_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_dashboardScript1.js?ver=1');
+	    wp_register_script('sid_nsna_searchResults_script_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_searchResultsjs.js?ver=1');
 	    
-	    wp_enqueue_style('sid_nsna_parentcss_pl3', plugin_dir_url( __FILE__ ) . 'Assets/styles/nsna_css.css');
+	    wp_enqueue_style('sid_nsna_parentcss_pl3', plugin_dir_url( __FILE__ ) . 'Assets/styles/nsna_style1.css?ver=1');
 		
 		if (isset( $_POST["sid_nsna_chosenCat_pl3"] ) && isset( $_POST["sid_nsna_latlng_pl3"] ) && wp_verify_nonce($_POST['sid_nsna_searchResultsNonce_pl3'], 'sid-nsna-searchResultsNonce-pl3'))
 		{
@@ -39,7 +39,7 @@ error_reporting(E_ALL);
 				$lat = $latlng[0];
 				$lng = $latlng[1];
 
-				wp_redirect( get_permalink( 20 ) .'?zip='.$lat.'&piz='.$lng.'&cat='.$cat );
+				wp_redirect( get_permalink( get_page_by_path( 'search-results' ) ) .'?zip='.$lat.'&piz='.$lng.'&cat='.$cat );
 				exit();
 			}
 		}
@@ -48,7 +48,7 @@ error_reporting(E_ALL);
 	add_action('admin_enqueue_scripts', function(){
 		// wp_enqueue_script( 'jquery' );
 		// wp_enqueue_script( 'sid_nsna_adminjq_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/jquery.min.js' );
-	    wp_enqueue_script( 'sid_nsna_adminjs_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/admin_nsna_js.js' );
+	    wp_enqueue_script( 'sid_nsna_adminjs_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nana_adminScript1.js?ver=1' );
 	    wp_localize_script( 'sid_nsna_adminjs_pl3', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php')));
 	});
 	
@@ -69,7 +69,6 @@ error_reporting(E_ALL);
     		wp_enqueue_script( 'jquery' );
 		    wp_enqueue_script( 'sid_nsna_parentjs_pl3' );
 		    wp_enqueue_script( 'sid_nsna_bootstrap_pl3' );
-
 		    /* Localize script for AJAX*/
 		    wp_localize_script( 'sid_nsna_parentjs_pl3', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php')));
     	}
