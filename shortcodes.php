@@ -43,8 +43,8 @@ add_shortcode('sid_nsna_searchbar_pl3', function(){// Custom page
     $sid_nsna_loadStyles_pl3 = true;
     $sid_nsna_loadLndScript_pl3 = true;
     $var = new sid_nsna_landing_cls();
-    return $var->sid_nsna_homePage_pl3();
 
+    return $var->sid_nsna_homePage_pl3();
 });
 
 add_shortcode('sid_SR_page_pl3', function(){// Custom page

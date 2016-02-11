@@ -87,18 +87,16 @@ class sid_nsna_searchResults_cls{
 
 		                <?php
 		            } // [ end foreach ]
-		            return ob_get_clean();
 		            ?>
             	</div>
             	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbgFepltqsSw8FxQauYO8pmWjAXjPKVuQ&libraries=places" defer></script>
             </div>
             <?php
+            return ob_get_clean();
         }// [ end if ]
         else
         {
-            
             ?>
-
             	<h1>No results</h1>
             	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbgFepltqsSw8FxQauYO8pmWjAXjPKVuQ&libraries=places" defer></script>
             <?php

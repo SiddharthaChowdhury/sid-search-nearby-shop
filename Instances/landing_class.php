@@ -8,20 +8,18 @@ class sid_nsna_landing_cls{
 		$select = new sid_nsna_selectDb_pl3();
 		$cats = $select->getCatHierarchy_pl3();
 		?>
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<?php foreach ($cats as $key => $value) {
-						?>
-							<div class="col-md-1 col-sm-3 col-xs-4 sid_marbot_pl3">
-							    <a data-toggle="modal" data-target="#sid_addressModal_pl3" href="#" data-cat="<?php echo $key; ?>" class="sid_catsSearch_pl3">
-								    <img src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/'.$key.'.png?ver=1'; ?>" alt="Something" ondragstart="return false;" class="img-responsive">
-							    </a>
-							    <small class="text-center"><?php echo $key; ?></small>
-							</div>
-						<?php
-						} ?>
-					</div>
+
+				<?php foreach ($cats as $key => $value) 
+				{
+				?>
+				<div class="nsna_singleIco_container">
+					<a data-toggle="modal" data-target="#sid_addressModal_pl3" href="#" data-cat="<?php echo $key; ?>" class="sid_catsSearch_pl3">
+						<img class="nsna_catIcon" src="<?php echo $sid_nsna_plugin_dir.'/Assets/images/'.$key.'.png?ver=1'; ?>" alt="Something" ondragstart="return false;">
+					</a>
+					<div class="text-center"><small><?php echo $key; ?></small></div>
 				</div>
+				<?php
+				} ?>
 
 				<!-- Modal -->
 				<form method="POST">
