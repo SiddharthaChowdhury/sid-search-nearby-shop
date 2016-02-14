@@ -43,6 +43,11 @@ error_reporting(E_ALL);
 				exit();
 			}
 		}
+		//check for get_appointmernt button ppessed
+		//> check nonce
+		//> check cat 
+		//> check shop_id
+		//> check lat lng of chosen address 
 	});
 
 	add_action('admin_enqueue_scripts', function(){

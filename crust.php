@@ -99,6 +99,15 @@ class sid_nsna_activation_pl3{
 		           'ping_status' => 'closed',
 		           'post_category' => array(1)
 		        ],
+		        '21' => [
+		           'post_title' => 'My Public Profile',
+		           'post_content' => "[sid_SPP_page_pl3]",
+		           'post_status' => 'publish',
+		           'post_type' => 'page',
+		           'comment_status' => 'closed',
+		           'ping_status' => 'closed',
+		           'post_category' => array(1)
+		        ],
 		    ];
 
 		    foreach ($_ as $key => $value) {

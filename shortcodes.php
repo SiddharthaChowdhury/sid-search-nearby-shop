@@ -77,4 +77,8 @@ add_shortcode('sid_SR_page_pl3', function(){// Custom page
     }
 });
 
+add_shortcode('sid_SPP_page_pl3', function(){
+    return $_GET['batch'];
+    exit();
+})
 ?>

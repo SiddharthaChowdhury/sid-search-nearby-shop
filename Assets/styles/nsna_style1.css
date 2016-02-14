@@ -167,10 +167,12 @@
 #sid_nsna_autocomplete_pl3 {
   border: 1px solid #bbb;
 }
+
                       /*  category icons  */
 .sid_nsna_categoryIconss_pl3 {
   display: flex;
   justify-content: center;
+  margin: 50px 0px 100px 0px;
 }
 .nsna_singleIco_container {
   flex: 1 1;
