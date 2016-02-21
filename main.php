@@ -44,6 +44,7 @@ error_reporting(E_ALL);
 				exit();
 			}
 		}
+
 		//check for get_appointmernt button ppessed
 		//> check nonce
 		//> check cat 

@@ -4,6 +4,12 @@
 #step-2, #step-3, #step-4, .lat-Landmark-pl3, #lat_lng_map_pl3, .nsna_hide_this_pl3{
   display: none; 
 }
+.nsna_hide_this{
+  display: none;
+}
+.nsna_tiny_font{
+  font-size: 10px;
+}
 .nsna_margin_top_1{
   margin-top: 10px;
 }
@@ -216,18 +222,6 @@
   background-color: #EC0C8C !important;
   color: #fff !important;
 }*/
-/*================ search button ==============*/
-.sid_nsna_btnSearch_pl3 {
-  background: #EC0C8C !important;
-  border: 1px solid #EC0C8C !important;
-  color: #fff !important;
-  padding: 10px 14px;
-}
-.sid_nsna_btnSearch_pl3:hover, .sid_nsna_btnSearch_pl3:active,.sid_nsna_btnSearch_pl3:focus {
-  background: #EC0C8C !important;
-  border: 1px solid #EC0C8C !important;
-  color: #fff !important;
-}
 
 /* ==========  SEARCH results ===========*/
 .sid_singleResult_pl3{ 
@@ -275,8 +269,29 @@
   border-radius:3px; padding:3px 6px;
 }
 
+/*  Confirm appointment  */
+.nsna_otp{
+  width: 100px !important;
+  height:50px !important;
+  text-align: center;
+  font-size: 25px;
+  color: #f29;
+  border: 1px dashed black !important;
+}
 
-
+.nsna_very_otp{
+  background-color: #33CC66;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+.nsna_resend_otp:hover{
+  text-decoration: none;
+}
+.nsna_very_otp:hover{
+  text-decoration: none;
+}
 
 
 

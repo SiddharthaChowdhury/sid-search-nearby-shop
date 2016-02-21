@@ -22,8 +22,8 @@
 
 		// Date and time picker
 		$('.nsna_dateTimePick_pl3').appendDtpicker({
-					"inline": false,
-					"dateFormat": "DD.MM.YY H:mmTT"
+			"inline": false,
+			"dateFormat": "DD.MM.YY H:mmTT"
 		});
 
 		// Quick Book button pressed
@@ -37,5 +37,22 @@
 			$('.nsna_type').val( $(this).closest('form').find('input[name="type"]').val() )
 			$('.nsna_subtype').val( $(this).closest('form').find('input[name="subtype"]').val() )
 		})
+
+		// On Confirm Appointment clicked
+		$('.nsna_checkHuman').click(function(e){
+			e.preventDefault();
+			$('.nsna_otp_cont').slideDown();
+			$(this).slideUp();
+		})
+
+		// On Bootstrap modal closed
+		$('#sid_nsna_appoModal_pl3').on('hidden.bs.modal', function () {
+		    $(this).find('.nsna_otp').val("");
+		    $(this).find('.nsna_otp_cont').hide();
+		    $(this).find('.nsna_checkHuman').show();
+
+		    // reset OTP counter
+		})
+
 
 })(jQuery);

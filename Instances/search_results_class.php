@@ -148,7 +148,7 @@ class sid_nsna_searchResults_cls{
 											</div>
 											<div class="input-group nsna_margin_bottom_1">
 											  	<span class="input-group-addon" id="basic-addon1">Email</span>
-											  	<input type="text" class="form-control" placeholder="Email@Address" aria-describedby="basic-addon1"/>
+											  	<input type="text" class="form-control" placeholder="Email@Address (optional)" aria-describedby="basic-addon1"/>
 											</div>
 											<div class="input-group nsna_margin_bottom_1">
 											  	<span class="input-group-addon" id="basic-addon1">Phone</span>
@@ -159,10 +159,28 @@ class sid_nsna_searchResults_cls{
 													<h4><i class="kt-icon-calendar" id="basic-addon1"></i></h4>
 												</label>
 												<div class="col-md-10 col-xs-10">
-											  		<input type="text" id="nsna_timestamp_pl3" class="nsna_dateTimePick_pl3" placeholder="Date and Time" />
+											  		<input type="text" id="nsna_timestamp_pl3" class="nsna_dateTimePick_pl3" placeholder="Date and Time" /> 
 												</div>
 											</div>
-
+											<div class="nsna_margin_bottom_1 text-center">
+												<div class="nsna_margin_bottom_1 nsna_hide_this nsna_otp_cont">
+													<div>Please ensure us that you are not a <a href="https://en.wikipedia.org/wiki/Spambot" target="_blank">Spambot</a>!</div>
+													<label class="nsna_tiny_font">Please NOTE: A system generated 4-digit OTP has been sent to the given contact details. Please check and enter the OPT below carefully. The OTP is valid for only 6-minutes in THIS system.</label>
+													<h3 class="nsna_margin_bottom_1">
+														<input type="text" class="nsna_otp" id="nsna_otp" placeholder="OTP" />
+														<label for="nsna_otp">
+															<a href="#" class="nsna_very_otp">
+																<i class="kt-icon-shield2"></i>
+															</a>
+														</label>
+													</h3>
+													<div class="nsna_margin_bottom_1">
+														<a href="#" class="nsna_resend_otp"><i class="kt-icon-refresh"></i>&nbsp;Resend OTP?</a>
+													</div>
+													<input type="checkbox" checked disabled> I have read and I agree to all the mentioned <a href="#">Terms and Conditions.</a>
+												</div>
+												<!-- <div><button class="btn btn-warning nsna_checkHuman">Check Human</button></div> -->
+											</div>
 
 						        		</div>
 						        	</div>
@@ -173,7 +191,10 @@ class sid_nsna_searchResults_cls{
 		                			<input type="hidden" class="nsna_subtype" />
 						      	<div class="modal-footer ">
 						      		<div class="text-center">
-						      			<a class="btn btn-success sid_nsna_btnSearch_pl3" href="#">Confirm Appointment<i class="kt-icon-clipboard4 nsna_margin_left_1"></i></a>
+						      			<button class="btn btn-warning nsna_checkHuman">Confirm Appointment<i class="kt-icon-clipboard4 nsna_margin_left_1"></i></button>
+						      			<h1 class="nsna_tiny_font">
+						      				Your information, whether public or private, will not be sold, exchanged, transferred, or given to any other company for any reason whatsoever, without your consent, other than for the express purpose of delivering the purchased product or service requested.
+						      			</h1>
 						      		</div>
 						      	</div>
 						    </div>
