@@ -25,6 +25,7 @@ error_reporting(E_ALL);
 	    wp_register_script('sid_nsna_bootstrap_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/bootstrap.min.js?ver=1');
 	    wp_register_script('sid_nsna_dashboard_script_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_dashboardScript1.js?ver=1');
 	    wp_register_script('sid_nsna_searchResults_script_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_searchResultsjs.js?ver=1');
+	    wp_register_script('sid_nsna_dateNtimePicker_script_pl3', plugin_dir_url( __FILE__ ) . 'Assets/scripts/nsna_timeNdatePickerScript1.js');
 	    
 	    wp_enqueue_style('sid_nsna_parentcss_pl3', plugin_dir_url( __FILE__ ) . 'Assets/styles/nsna_style1.css?ver=1');
 		
@@ -48,6 +49,29 @@ error_reporting(E_ALL);
 		//> check cat 
 		//> check shop_id
 		//> check lat lng of chosen address 
+		// $f = file("http://www.onverify.com/sms.php?userid=13475&apipass=4829&msg=test&number=919008574529");
+		// // $f = file("https://api.nexmo.com/verify/json?api_key=718f07b3&api_secret=509429b0ba3ab295&number=919008574529&brand=NexmoVerifyTest");
+// switch($f[0]) {
+// case "2":
+// echo "username or password is wrong";
+// break;
+// case "3":
+// echo "balance is not enough";
+// break;
+// case "4":
+// echo "number wrong";
+// break;
+// case "6":
+// echo "ip restriction";
+// break;
+// case "7":
+// echo "duplicate vid";
+// break;
+// default:
+// if ($f[0]>100) echo "sms is queued";
+// }
+
+		//http://www.onverify.com/call.php?userid=13475&apipass=4829&&pin=9932&number=9008574529&template_id=14693
 	});
 
 	add_action('admin_enqueue_scripts', function(){
@@ -93,8 +117,8 @@ error_reporting(E_ALL);
     	}
     	elseif ($sid_nsna_searchResults_pl3) {
     		wp_enqueue_script( 'jquery' );
+    		wp_enqueue_script( 'sid_nsna_dateNtimePicker_script_pl3' );
 		    wp_enqueue_script( 'sid_nsna_searchResults_script_pl3' );
-		    // wp_enqueue_script( 'sid_nsna_bootstrap_pl3' );
 		    /* Localize script for AJAX*/
 		    wp_localize_script( 'sid_nsna_searchResults_script_pl3', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php')));
     	}

@@ -64,12 +64,12 @@
 			    } 
 			    else 
 			      window.alert('Geocoder failed due to: ' + status);
-			    
 			});
 		}
 		else
 		{
-			if(navigator.geolocation) {
+			if(navigator.geolocation) 
+			{
 	        	navigator.geolocation.getCurrentPosition(function (position) 
 	        	{
 
