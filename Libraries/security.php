@@ -135,5 +135,29 @@ class sid_nsna_security_pl3
 			return md5(uniqid($user_email, true));
 		// returns 32bit long string
 	}
+
+	public function sid_nsna_get_ThisSystem_public_ip_address( $case1 = 0)
+	{
+		// TODO: Add a fallback to http://httpbin.org/ip
+		// TODO: Add a fallback to http://169.254.169.254/latest/meta-data/public-ipv4
+		if( $case1 == 1 )
+			$url="http://simplesniff.com/ip";
+		else
+			$url="http://httpbin.org/ip" ;
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+		$data = curl_exec($ch);
+		curl_close($ch);
+
+		if(empty($data))
+			$this->sid_nsna_get_ThisSystem_public_ip_address( 1 );	
+
+		if( $case1 == 0 )
+			$data = json_decode($data, true)['origin'];
+		return $data;
+	} 
 }
 ?>

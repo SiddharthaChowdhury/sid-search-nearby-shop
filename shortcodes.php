@@ -67,6 +67,7 @@ add_shortcode('sid_SR_page_pl3', function(){// Custom page
 
             $select = new sid_nsna_selectDb_pl3();
             $result = $select->get_AreaBounds($lat, $lng, $radius, $cat);
+            // $ip = $select->get_client_IPaddress();
             $cats = $select->getParentCats_pl3();
             // var_dump($result);
             // exit();

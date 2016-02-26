@@ -1,6 +1,6 @@
 <?php
 
-class sid_nsna_selectDb_pl3
+class sid_nsna_selectDb_pl3 extends sid_nsna_security_pl3
 {
 
 	public function getCatHierarchy_pl3()
@@ -226,5 +226,10 @@ class sid_nsna_selectDb_pl3
 		// exit();
 
 
+	}
+
+	public function get_client_IPaddress(){
+		return parent::sid_nsna_get_ThisSystem_public_ip_address();
+		// exit();
 	}
 }

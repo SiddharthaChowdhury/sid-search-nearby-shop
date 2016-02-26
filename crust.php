@@ -12,6 +12,7 @@ class sid_nsna_activation_pl3{
 			$table_name4 = $wpdb->prefix . "sid_shopscat_pl3";
 			$table_name5 = $wpdb->prefix . "sid_appointments_pl3";
 			$table_name6 = $wpdb->prefix . "sid_complains_pl3";
+			$table_name7 = $wpdb->prefix . "sid_otps_pl3";
 
 		    $sid_nsna_db_version_pl3 = '1.0';
 		    $charset_collate = $wpdb->get_charset_collate();
@@ -91,6 +92,14 @@ class sid_nsna_activation_pl3{
 				UNIQUE KEY id (id)
 			) $charset_collate;";
 
+			$sql7 = "CREATE TABLE IF NOT EXISTS $table_name7(
+				id mediumint(9) NOT NULL AUTO_INCREMENT,
+				ottp varchar(9) NOT NULL,
+				on_time DATETIME NOT NULL,
+				ip_addr varchar(34) NOT NULL,
+				UNIQUE KEY id (id)
+			) $charset_collate;";
+
 
 			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 			dbDelta( $sql0 );
@@ -100,6 +109,7 @@ class sid_nsna_activation_pl3{
 			dbDelta( $sql4 );
 			dbDelta( $sql5 );
 			dbDelta( $sql6 );
+			dbDelta( $sql7 );
 			
 			add_option( 'sid_nsna_db_version_pl3', $sid_nsna_db_version_pl3 );
 		}
@@ -180,6 +190,7 @@ class sid_nsna_activation_pl3{
 			 $table_name4 = $wpdb->prefix . "sid_shopscat_pl3";
 			 $table_name5 = $wpdb->prefix . "sid_appointments_pl3";
 			 $table_name6 = $wpdb->prefix . "sid_complains_pl3";
+			 $table_name7 = $wpdb->prefix . "sid_otps_pl3";
 
 			 array_push($tabls, $table_name0);
 			 array_push($tabls, $table_name1);
@@ -188,6 +199,7 @@ class sid_nsna_activation_pl3{
 			 array_push($tabls, $table_name4);
 			 array_push($tabls, $table_name5);
 			 array_push($tabls, $table_name6);
+			 array_push($tabls, $table_name7);
 
 			 foreach ($tabls as $value) {
 			 	$sql = "DROP TABLE IF EXISTS $value;";

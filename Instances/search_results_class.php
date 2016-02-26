@@ -3,6 +3,7 @@ class sid_nsna_searchResults_cls{
 
 	private $results = [];
 	private $cats = [];
+	// private $ip;
 
 	function __construct($data, $cats){
 		if( !empty($data) )
@@ -23,6 +24,8 @@ class sid_nsna_searchResults_cls{
         {
         	global $sid_nsna_base_dir;
 			global $sid_nsna_plugin_dir;
+			global $current_user;
+
 			$lat = $_GET['zip'];
 			$lng = $_GET['piz'];
 			// $cat = $_GET['cat'];
@@ -57,6 +60,7 @@ class sid_nsna_searchResults_cls{
             	</div>
             	<div class="col-md-9"> <!-- Search Results -->
             		<?php
+
 		            foreach ($this->results as $value) 
 		            {
 		            	$filePath = str_replace("\\", "/", $sid_nsna_base_dir."Assets/Vendors/".$value->operateStamp."/Logo_e.png");
@@ -114,7 +118,6 @@ class sid_nsna_searchResults_cls{
             	</div>
             	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbgFepltqsSw8FxQauYO8pmWjAXjPKVuQ&libraries=places" defer></script>
             </div>
-
             	<!-- Modal -->
             	<form method="POST">
 					<div id="sid_nsna_appoModal_pl3" class="modal fade" role="dialog">
@@ -144,22 +147,22 @@ class sid_nsna_searchResults_cls{
 						        			
 						        			<div class="input-group nsna_margin_bottom_1">
 											  	<span class="input-group-addon" id="basic-addon1">Name</span>
-											  	<input type="text" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1"/>
+											  	<input type="text" class="form-control jq_checkAppo_frm" data-name="name" data-msg="Name is missing." placeholder="Full Name" aria-describedby="basic-addon1"/>
 											</div>
 											<div class="input-group nsna_margin_bottom_1">
 											  	<span class="input-group-addon" id="basic-addon1">Email</span>
-											  	<input type="text" class="form-control" placeholder="Email@Address (optional)" aria-describedby="basic-addon1"/>
+											  	<input type="text" class="form-control jq_checkAppo_frm" data-name="email" data-msg="Email is missing." placeholder="Email@Address" aria-describedby="basic-addon1" value="<?php echo ( empty($current_user->user_email) ? "" : $current_user->user_email ); ?>" />
 											</div>
 											<div class="input-group nsna_margin_bottom_1">
-											  	<span class="input-group-addon" id="basic-addon1">Phone</span>
-											  	<input type="text" class="form-control" placeholder="10 digit contact number" aria-describedby="basic-addon1"/>
+											  	<span class="input-group-addon" id="basic-addon1"> + 91 /</span>
+											  	<input type="text" class="form-control jq_checkAppo_frm" data-name="phone" data-msg="Phone number is missing" placeholder="10 digit contact number" aria-describedby="basic-addon1"/>
 											</div>
 											<div class="input-group nsna_margin_bottom_1">
 												<label class="col-md-1 col-xs-1" for="nsna_timestamp_pl3">
 													<h4><i class="kt-icon-calendar" id="basic-addon1"></i></h4>
 												</label>
 												<div class="col-md-10 col-xs-10">
-											  		<input type="text" id="nsna_timestamp_pl3" class="nsna_dateTimePick_pl3" placeholder="Date and Time" /> 
+											  		<input type="text" id="nsna_timestamp_pl3" class="nsna_dateTimePick_pl3 jq_checkAppo_frm" data-name="time" placeholder="Date and Time" /> 
 												</div>
 											</div>
 											<div class="nsna_margin_bottom_1 text-center">
@@ -179,8 +182,8 @@ class sid_nsna_searchResults_cls{
 													</div>
 													<input type="checkbox" checked disabled> I have read and I agree to all the mentioned <a href="#">Terms and Conditions.</a>
 												</div>
-												<!-- <div><button class="btn btn-warning nsna_checkHuman">Check Human</button></div> -->
 											</div>
+											<div class="text-center nsna_status"></div>
 
 						        		</div>
 						        	</div>
@@ -189,6 +192,7 @@ class sid_nsna_searchResults_cls{
 		                			<input type="hidden" class="nsna_email" />
 		                			<input type="hidden" class="nsna_type" />
 		                			<input type="hidden" class="nsna_subtype" />
+		                			<!-- <input type="hidden" class="nana_ip" value="<?php echo $this->ip; ?>"> -->
 						      	<div class="modal-footer ">
 						      		<div class="text-center">
 						      			<button class="btn btn-warning nsna_checkHuman">Confirm Appointment<i class="kt-icon-clipboard4 nsna_margin_left_1"></i></button>

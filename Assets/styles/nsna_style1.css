@@ -292,9 +292,13 @@
 .nsna_very_otp:hover{
   text-decoration: none;
 }
+.nsna_status{
+  color: #f29;
+}
 
-
-
+a.icon-close{ /*  Date picker close button  */
+  display: none !important;
+}
 
 
 

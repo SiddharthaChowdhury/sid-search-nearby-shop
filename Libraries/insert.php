@@ -1,10 +1,13 @@
 <?php
 
-class sid_nsna_insertDb_pl3{
+class sid_nsna_insertDb_pl3
+{
+	
 	public function create_shop_pl3($data)
 	{
 		extract($data);
 	}
+
 	public function createCategory_pl3($data)
 	{
 		global $wpdb;
@@ -49,5 +52,24 @@ class sid_nsna_insertDb_pl3{
 					"code" => 200
 				]); 
    		} 
+	}
+
+	public function record_otpDB( $otp, $ip ){
+
+		global $wpdb;
+		$tablename = $wpdb->prefix.'sid_otps_pl3';
+		// insert into DB
+			$to_db = array( 
+			'ottp' => $otp,
+			'on_time' => date("Y-m-d H:i:s") ,
+			'ip_addr' => $ip
+		);
+
+		$resp2 = $wpdb->insert( $tablename, $to_db);
+		
+		if (!$resp2)
+			return false; 
+		else
+			return true;
 	}
 }
