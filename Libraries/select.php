@@ -58,6 +58,29 @@ class sid_nsna_selectDb_pl3 extends sid_nsna_security_pl3
 		return $cats;
 	}
 
+	public function is_valid_Cat($cat){  // Is valid Category
+		global $wpdb;
+
+		$tablename = $wpdb->prefix.'sid_shopscat_pl3';
+		$TorF = $wpdb->get_var( "SELECT COUNT(*) FROM $tablename WHERE cat = '$cat' AND level = 'none' " );
+		
+		if( $TorF )
+			return true;
+		return false;
+	}
+
+
+	public function is_valid_Subcat($cat , $sub){  // Is valid subcategory
+		global $wpdb;
+
+		$tablename = $wpdb->prefix.'sid_shopscat_pl3';
+		$TorF = $wpdb->get_var( "SELECT COUNT(*) FROM $tablename WHERE parentt = '$cat' AND cat = '$sub' AND level = '1' " );
+		
+		if( $TorF )
+			return true;
+		return false;
+	}
+
 	public function getSubcat_pl3($data){
 		
 		global $wpdb;
@@ -96,13 +119,17 @@ class sid_nsna_selectDb_pl3 extends sid_nsna_security_pl3
 		return json_encode($tree);
 	}
 
-	public function isRegistered_pl3(){
+	public function isRegistered_pl3( $user = null ){
 
-		global $user_email;  
-		get_currentuserinfo();
+		if( $user == null ){
+			global $user_email;  
+			get_currentuserinfo();
+			$user = $user_email;
+		}
+		
 		global $wpdb;
 		$tablename = $wpdb->prefix.'sid_shopid_pl3';
-   		$user_count = $wpdb->get_var( "SELECT COUNT(*) FROM $tablename WHERE email = '$user_email' " );
+   		$user_count = $wpdb->get_var( "SELECT COUNT(*) FROM $tablename WHERE email = '$user' " );
    		if ( $user_count )
    			return true;
    		return false;
@@ -232,4 +259,21 @@ class sid_nsna_selectDb_pl3 extends sid_nsna_security_pl3
 		return parent::sid_nsna_get_ThisSystem_public_ip_address();
 		// exit();
 	}
+
+	public function verifyOTP($ip, $otp){
+
+		global $wpdb;
+
+		$table_name0 = $wpdb->prefix . "sid_otps_pl3";
+
+		$sql = "SELECT count(*) AS cnt
+		FROM $table_name0
+		WHERE ottp = '$otp' AND ip_addr = '$ip' AND on_time >= DATE_SUB(now(), INTERVAL 5 MINUTE)";
+
+		$det = $wpdb->get_var( $sql );
+		return $det;
+
+	}
+
+
 }

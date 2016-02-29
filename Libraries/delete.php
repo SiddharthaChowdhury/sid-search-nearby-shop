@@ -31,5 +31,22 @@
    			]);
 			
 		}
+
+		public function deltHisExistingOTP( $ip )
+		{
+			global $wpdb;
+			$table_name0 = $wpdb->prefix . "sid_otps_pl3";
+			$res = $wpdb->delete( $table_name0, array( 'ip_addr' => $ip ) );
+			return;
+		}
+
+		public function del_OTP( $otp )
+		{
+			global $wpdb;
+			$table_name0 = $wpdb->prefix . "sid_otps_pl3";
+			$res = $wpdb->delete( $table_name0, array( 'ottp' => $otp ) );
+			return;
+		}
+		
 	}
 ?>

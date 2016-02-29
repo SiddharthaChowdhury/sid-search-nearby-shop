@@ -36,6 +36,7 @@
 			$('.nsna_email').val( $(this).closest('form').find('input[name="email"]').val() )
 			$('.nsna_type').val( $(this).closest('form').find('input[name="type"]').val() )
 			$('.nsna_subtype').val( $(this).closest('form').find('input[name="subtype"]').val() )
+			$('.nsna_shpName').val( $(this).closest('form').find('input[name="name"]').val() )
 		})
 
 		// On Confirm Appointment clicked
@@ -49,7 +50,7 @@
 				if( $(this).val().length < 3 )
 					flg.push($(this).data('msg'));
 			})
-
+			
 			if(flg.length < 1){
 				form.find('.nsna_status').empty()
 				if( confirm("Sure about the appointment time? "+$('#nsna_timestamp_pl3').val()) ){
@@ -95,6 +96,42 @@
 		    $(this).find('.nsna_otp_cont').hide();
 		    $(this).find('.nsna_checkHuman').show();
 		    $(this).find('.nsna_status').empty()
+		})
+
+		$('.nsna_very_otp').click(function(e){
+			e.preventDefault();
+			var form = $(this).closest('form');
+			var self = $(this)
+			var data_to_send = {};
+			form.find('.nsna_JQ_setAppo').each(function(){
+				data_to_send[ $(this).data('name') ] = $(this).val();
+			})
+
+			console.log(data_to_send);
+
+			var data = {
+	            action: 'sid_nsna_ajax_pl3',
+	            token: 'verify_OTP',
+	            data_sent: data_to_send
+	        };
+
+	        $.post(MyAjax.ajaxurl, data, function(resp) {
+	        	console.log(resp)
+	        	if( resp.status == 200 ){
+	        		$('.nsna_otp_cont').slideDown();
+					$(this).slideUp();
+					form.find('.nsna_status').append('<div style="color:#5b5;">'+resp.msg[0]+'</div>')
+	        	}
+	        	else
+	        	{
+	        		$.each( resp.msg, function( i, v) {
+	        			form.find('.nsna_status').append('<div>'+v+'</div>')
+	        		})
+	        		self.attr('disabled', false);
+
+	        	}
+	        },'json').responseJSON;
+
 		})
 
 

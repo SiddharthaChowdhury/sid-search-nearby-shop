@@ -159,5 +159,19 @@ class sid_nsna_security_pl3
 			$data = json_decode($data, true)['origin'];
 		return $data;
 	} 
+
+ 	// Generate four digit OTP (One Time Password)
+	public function sid_nsna_generateOTP(){
+		$string = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      	$string_shuffled = str_shuffle($string);
+      	$otp = substr($string_shuffled, 1, 4);
+      	return $otp;
+	}
+
+	public function sid_nsna_verifyOTP($data){
+		if(!preg_match('%^[a-zA-Z0-9]{4,4}$%', stripcslashes(trim($data))))
+			return false;
+		return true;
+	}
 }
 ?>

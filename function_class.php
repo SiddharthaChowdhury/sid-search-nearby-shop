@@ -95,6 +95,9 @@ class sid_nsna_ShopClass_pl3 extends sid_nsna_security_pl3{
 		$lat = $this->getLat_pl3();
 		$lng = $this->getLng_pl3();
 
+		$select = new sid_nsna_selectDb_pl3();
+		if( $select->isRegistered_pl3( $email ) )
+			array_push($errors, 'You are already registered.');
 		if(!empty($landmark))
 			array_push($errors, 'Error! Caught Robot.');
 		if(!wp_verify_nonce($this->getNonce_pl3(), 'sid-nsna-nonce-pl3'))

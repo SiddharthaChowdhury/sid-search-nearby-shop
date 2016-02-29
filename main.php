@@ -200,6 +200,12 @@ function sid_nsna_ajax_pl3(){
             		echo $logix->gnerate_OTP_4_him($_POST['data_sent']);
             		exit();
             	break;
+
+            case 'verify_OTP':
+            		$logix = new sid_nsna_logic_pl3();
+            		echo $logix->confirm_Appointment($_POST['data_sent']);
+            		exit();
+            	break;
             	
             // default:
             //     echo 'fishy! Something went wrong! Sorry for the inconvenience..' ;

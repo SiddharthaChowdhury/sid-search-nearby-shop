@@ -147,22 +147,22 @@ class sid_nsna_searchResults_cls{
 						        			
 						        			<div class="input-group nsna_margin_bottom_1">
 											  	<span class="input-group-addon" id="basic-addon1">Name</span>
-											  	<input type="text" class="form-control jq_checkAppo_frm" data-name="name" data-msg="Name is missing." placeholder="Full Name" aria-describedby="basic-addon1"/>
+											  	<input type="text" class="form-control jq_checkAppo_frm nsna_JQ_setAppo" data-name="name" data-msg="Name is missing." placeholder="Full Name" aria-describedby="basic-addon1"/>
 											</div>
 											<div class="input-group nsna_margin_bottom_1">
 											  	<span class="input-group-addon" id="basic-addon1">Email</span>
-											  	<input type="text" class="form-control jq_checkAppo_frm" data-name="email" data-msg="Email is missing." placeholder="Email@Address" aria-describedby="basic-addon1" value="<?php echo ( empty($current_user->user_email) ? "" : $current_user->user_email ); ?>" />
+											  	<input type="text" class="form-control jq_checkAppo_frm nsna_JQ_setAppo" data-name="email" data-msg="Email is missing." placeholder="Email@Address" aria-describedby="basic-addon1" value="<?php echo ( empty($current_user->user_email) ? "" : $current_user->user_email ); ?>" />
 											</div>
 											<div class="input-group nsna_margin_bottom_1">
 											  	<span class="input-group-addon" id="basic-addon1"> + 91 /</span>
-											  	<input type="text" class="form-control jq_checkAppo_frm" data-name="phone" data-msg="Phone number is missing" placeholder="10 digit contact number" aria-describedby="basic-addon1"/>
+											  	<input type="text" class="form-control jq_checkAppo_frm nsna_JQ_setAppo" data-name="phone" data-msg="Phone number is missing" placeholder="10 digit contact number" aria-describedby="basic-addon1"/>
 											</div>
 											<div class="input-group nsna_margin_bottom_1">
 												<label class="col-md-1 col-xs-1" for="nsna_timestamp_pl3">
 													<h4><i class="kt-icon-calendar" id="basic-addon1"></i></h4>
 												</label>
 												<div class="col-md-10 col-xs-10">
-											  		<input type="text" id="nsna_timestamp_pl3" class="nsna_dateTimePick_pl3 jq_checkAppo_frm" data-name="time" placeholder="Date and Time" /> 
+											  		<input type="text" id="nsna_timestamp_pl3" class="nsna_dateTimePick_pl3 jq_checkAppo_frm nsna_JQ_setAppo" data-name="time" data-name="time" placeholder="Date and Time" /> 
 												</div>
 											</div>
 											<div class="nsna_margin_bottom_1 text-center">
@@ -170,7 +170,7 @@ class sid_nsna_searchResults_cls{
 													<div>Please ensure us that you are not a <a href="https://en.wikipedia.org/wiki/Spambot" target="_blank">Spambot</a>!</div>
 													<label class="nsna_tiny_font">Please NOTE: A system generated 4-digit OTP has been sent to the given contact details. Please check and enter the OPT below carefully. The OTP is valid for only 6-minutes in THIS system.</label>
 													<h3 class="nsna_margin_bottom_1">
-														<input type="text" class="nsna_otp" id="nsna_otp" placeholder="OTP" />
+														<input type="text" class="nsna_otp nsna_JQ_setAppo" data-name="d_otp" id="nsna_otp" placeholder="OTP" />
 														<label for="nsna_otp">
 															<a href="#" class="nsna_very_otp">
 																<i class="kt-icon-shield2"></i>
@@ -188,10 +188,13 @@ class sid_nsna_searchResults_cls{
 						        		</div>
 						        	</div>
 						        	<input type="hidden" name="sid_nsna_AppoNonce_pl3" id="nonce" class="jq_IP_pl3" value="<?php echo wp_create_nonce('sid-nsna-AppoNonce-pl3'); ?>"/>
-						      		<input type="hidden" class="nsna_id" />
-		                			<input type="hidden" class="nsna_email" />
-		                			<input type="hidden" class="nsna_type" />
-		                			<input type="hidden" class="nsna_subtype" />
+						      		<input type="hidden" data-name="s_idd" class="nsna_JQ_setAppo nsna_id" />
+		                			<input type="hidden" data-name="s_eml" class="nsna_JQ_setAppo jq_checkAppo_frm nsna_email" data-msg="Shop Email is missing" />
+		                			<input type="hidden" data-name="s_typ" class="nsna_JQ_setAppo nsna_type" />
+		                			<input type="hidden" data-name="s_sub" class="nsna_JQ_setAppo nsna_subtype" />
+		                			<input type="hidden" data-name="s_faddr" class="nsna_JQ_setAppo nsna_formatted_address_pl3" />
+		                			<input type="hidden" data-name="s_nam" class="nsna_JQ_setAppo nsna_shpName" />
+            	
 		                			<!-- <input type="hidden" class="nana_ip" value="<?php echo $this->ip; ?>"> -->
 						      	<div class="modal-footer ">
 						      		<div class="text-center">
